@@ -161,7 +161,11 @@ defmodule DiscordKiso.Commands.Image do
       result = results |> Enum.shuffle |> Enum.find(fn post -> is_image?(post.file_url) == true && is_dupe?("dan", post.file_url) == false end)
 
       post_id = Integer.to_string(result.id)
-      image = "http://#{dan}#{result.file_url}"
+      image = if URI.parse(result.file_url).host do
+        result.file_url
+      else
+        "http://#{dan}#{result.file_url}"
+      end
 
       {post_id, image, result}
     rescue
