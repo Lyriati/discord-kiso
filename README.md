@@ -4,11 +4,11 @@
 
 ## Setup
 
-Type `!setup` to add your server to my database. From there you should set tell me what roles can edit my settings by using `!addrole :role`.
+Type `!setup` to add your server to my database. From there you should set tell me what roles can edit my settings by using `!adminrole add`.
 
 ## Stream Alerts
 
-I will always announce everyone in the server when they go live. Just set which channel to announce to by going to that channel and typing `!setlog`.
+I will always announce everyone in the server when they go live. Just set which channel to announce to by going to that channel and typing `!announce here`.
 
 ## Commands
 
