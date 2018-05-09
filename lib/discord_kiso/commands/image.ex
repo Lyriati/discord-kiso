@@ -156,7 +156,7 @@ defmodule DiscordKiso.Commands.Image do
 
     request = "http://#{dan}/posts.json?limit=50&page=1&tags=#{tag1}+#{tag2}" |> HTTPoison.get!
 
-    try do
+    #try do
       results = Poison.Parser.parse!((request.body), keys: :atoms)
       result = results |> Enum.shuffle |> Enum.find(fn post -> is_image?(post.file_url) == true && is_dupe?("dan", post.file_url) == false end)
 
@@ -168,12 +168,12 @@ defmodule DiscordKiso.Commands.Image do
       end
 
       {post_id, image, result}
-    rescue
-      Enum.EmptyError -> "Nothing found!"
-      UndefinedFunctionError -> "Nothing found!"
-      error ->
-        "fsdafsd"
-    end
+    #rescue
+    #  Enum.EmptyError -> "Nothing found!"
+    #  UndefinedFunctionError -> "Nothing found!"
+    #  error ->
+    #    "fsdafsd"
+    #end
   end
 
   def nhentai(data) do
