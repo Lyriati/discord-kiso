@@ -33,7 +33,11 @@ defmodule DiscordKiso.Commands.Announce do
                 :ok ->
                   stream_title = data.game.name
                   stream_url = data.game.url
-                  twitch_username = data.game.url |> String.split("/") |> List.last
+
+                  twitch_username = data.game.url
+                  |> String.split("/")
+                  |> List.last
+
                   log_chan = db.log
 
                   stream_list = query_data("streams", guild_id)

@@ -172,7 +172,6 @@ defmodule DiscordKiso.Commands.Image do
       Enum.EmptyError -> "Nothing found!"
       UndefinedFunctionError -> "Nothing found!"
       error ->
-        Logger.log :warn, error
         "fsdafsd"
     end
   end
