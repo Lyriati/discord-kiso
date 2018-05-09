@@ -154,7 +154,7 @@ defmodule DiscordKiso.Commands.Image do
     tag1 = tag1 |> String.split |> Enum.join("_") |> URI.encode_www_form
     tag2 = tag2 |> String.split |> Enum.join("_") |> URI.encode_www_form
 
-    request = "http://#{dan}/posts.json?limit=50&page=1&tags=#{tag1}+#{tag2}" |> HTTPoison.get!
+    request = "https://#{dan}/posts.json?limit=50&page=1&tags=#{tag1}+#{tag2}" |> HTTPoison.get!
 
     #try do
       results = Poison.Parser.parse!((request.body), keys: :atoms)
