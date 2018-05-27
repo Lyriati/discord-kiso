@@ -1,5 +1,4 @@
 defmodule DiscordKiso.Util do
-
   def pull_id(message) do
     id = Regex.run(~r/([0-9])\w+/, message)
 

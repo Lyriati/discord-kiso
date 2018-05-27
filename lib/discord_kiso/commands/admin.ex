@@ -18,7 +18,12 @@ defmodule DiscordKiso.Commands.Admin do
 
   def remove_from_guild(data) do
     guild_id = data.id
-    delete_data("guilds", guild_id)
+    
+    db = query_data("guilds", guild_id)
+    db = Map.put(db, :admin_roles, [])
+    
+    nil
+    # store_data("guilds", guild_id, db)
   end
 
   def add_role(data) do
